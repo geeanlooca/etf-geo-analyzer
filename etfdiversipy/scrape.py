@@ -15,6 +15,7 @@ DATA_DICT = {
     "SWDA": "https://www.ishares.com/it/investitore-privato/it/prodotti/251882/ishares-msci-world-ucits-etf-acc-fund/1506575546154.ajax?fileType=csv&fileName=SWDA_holdings&dataType=fund",
     "EIMI": "https://www.ishares.com/it/investitore-privato/it/prodotti/264659/ishares-msci-emerging-markets-imi-ucits-etf/1506575546154.ajax?fileType=csv&fileName=EIMI_holdings&dataType=fund",
     "SP500": "https://www.ishares.com/it/investitore-privato/it/prodotti/253743/ishares-sp-500-b-ucits-etf-acc-fund/1506575546154.ajax?fileType=csv&fileName=CSSPX_holdings&dataType=fund",
+    "STOXXEU600": "https://www.ishares.com/it/investitore-privato/it/prodotti/251931/ishares-stoxx-europe-600-ucits-etf-de-fund/1506575546154.ajax?fileType=csv&fileName=EXSA&dataType=fund",
 }
 
 
