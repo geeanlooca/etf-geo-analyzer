@@ -37,12 +37,12 @@ async def send_async_request(url: str, filename: str) -> None:
     return await asyncio.to_thread(send_request, url, filename)
 
 
-async def batch_download_etfs(data_dir: str):
+async def batch_download_etfs(urls: list[str], filenames: list[str], data_dir: str):
     """Download a batch of ETFs in an async way."""
     # for each element in the dictionary, send a request in async way
     tasks = [
         send_async_request(url, os.path.join(data_dir, f"{filename}.csv"))
-        for filename, url in DATA_DICT.items()
+        for (filename, url) in zip(filenames, urls)
     ]
 
     _ = await tqdm.asyncio.tqdm.gather(*tasks)
@@ -58,4 +58,5 @@ def main() -> None:
     if not os.path.exists(data_path):
         os.makedirs(data_path)
 
-    asyncio.run(batch_download_etfs(data_path))
+    urls, filenames = DATA_DICT.values(), DATA_DICT.keys()
+    asyncio.run(batch_download_etfs(urls, filenames, data_path))
