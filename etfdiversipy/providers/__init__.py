@@ -5,8 +5,12 @@ from etfdiversipy.fund import Fund
 
 class Provider(ABC):
     @abstractmethod
+    def refresh_list():
+        ...
+
+    @abstractmethod
     def get_available_funds(self, *args, **kwargs) -> list[Fund]:
-        pass
+        ...
 
 
 class Providers(Enum):
@@ -17,8 +21,13 @@ class Providers(Enum):
 
 
 class iShares(Provider):
+    FUND_LIST_URL = "https://www.ishares.com/it/investitore-privato/it/prodotti/251931/ishares-stoxx-europe-600-ucits-etf-de-fund/1506575546154.ajax?fileType=csv&dataType=fund"
+
     def get_available_funds(self, *args, **kwargs):
         raise NotImplementedError("iShares not implemented yet")
+
+    def refresh_list():
+        ...
 
 
 class BlackRock(Provider):

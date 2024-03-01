@@ -9,7 +9,10 @@ name = "etfdiversipy"
 version = "0.0.1"
 authors = [{ name = "Gianluca Marcon", email = "marcon.gluca@gmail.com" }]
 maintainers = [{ name = "Gianluca Marcon", email = "marcon.gluca@gmail.com" }]
-dependencies = [ "polars", "tqdm", "ruff" ]
+dependencies = [ "polars", "tqdm", "ruff", "beautifulsoup4", "requests-html" ]
+
+[tool.setuptools]
+packages = ["etfdiversipy"]
 
 [project.urls]
 Homepage = "https://github.com/etf-geo-analyzer"
